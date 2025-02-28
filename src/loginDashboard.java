@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 import java.awt.Color;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author mendo
@@ -31,6 +40,7 @@ public class loginDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         left = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         right = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,12 +51,21 @@ public class loginDashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         login = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         left.setBackground(new java.awt.Color(0, 128, 128));
         left.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ipark.png"))); // NOI18N
+        left.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 420, 440));
+
         getContentPane().add(left, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 420));
 
         right.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,6 +81,11 @@ public class loginDashboard extends javax.swing.JFrame {
         right.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         username.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameFocusLost(evt);
+            }
+        });
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
@@ -73,6 +97,11 @@ public class loginDashboard extends javax.swing.JFrame {
         jLabel3.setText("Password");
         right.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFocusLost(evt);
+            }
+        });
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
@@ -122,6 +151,26 @@ public class loginDashboard extends javax.swing.JFrame {
 
         right.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 80, 30));
 
+        jPanel1.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 20, 20));
+
+        jPanel2.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 20, 20));
+
+        jPanel3.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 20, 20));
+
+        jPanel4.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 20, 20));
+
+        jPanel5.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 20, 20));
+
         getContentPane().add(right, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 370, 420));
 
         pack();
@@ -129,7 +178,7 @@ public class loginDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_usernameActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
@@ -142,7 +191,7 @@ public class loginDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_loginMouseClicked
 
     private void loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseEntered
@@ -157,6 +206,44 @@ public class loginDashboard extends javax.swing.JFrame {
         signupDashboard up = new signupDashboard();
          login.add(up).setVisible(true);
     }//GEN-LAST:event_signupMouseClicked
+
+    private void usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusLost
+       Font smallFont = new Font("Arial", Font.PLAIN, 10); 
+username.setFont(smallFont); 
+requireduser.setFont(smallFont); 
+
+String user = username.getText();
+
+if (user.isEmpty()) {
+    username.setForeground(Color.RED);
+    requireduser.setText("Username is required");
+    requireduser.setForeground(Color.RED);
+} else {
+    username.setForeground(Color.BLACK);
+    requireduser.setText("");
+}
+
+username.repaint();  
+    }//GEN-LAST:event_usernameFocusLost
+
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
+       Font smallFont = new Font("Arial", Font.PLAIN, 10);
+password.setFont(smallFont); 
+requiredpass.setFont(smallFont); 
+
+String user = password.getText();
+
+if (user.isEmpty()) {
+    password.setForeground(Color.RED);
+    requiredpass.setText("Password is required");
+    requiredpass.setForeground(Color.RED);
+} else {
+    username.setForeground(Color.BLACK);
+    requiredpass.setText("");
+}
+
+password.repaint();
+    }//GEN-LAST:event_passwordFocusLost
 
     /**
      * @param args the command line arguments
@@ -199,6 +286,12 @@ public class loginDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel left;
     private javax.swing.JPanel login;
     private javax.swing.JPasswordField password;
@@ -206,4 +299,40 @@ public class loginDashboard extends javax.swing.JFrame {
     private javax.swing.JButton signup;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+
+    private static class requireduser {
+
+        private static void setText(String username_is_required) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static void setForeground(Color RED) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static void setFont(Font smallFont) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public requireduser() {
+        }
+    }
+
+    private static class requiredpass {
+
+        private static void setFont(Font smallFont) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static void setText(String password_is_required) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static void setForeground(Color RED) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public requiredpass() {
+        }
+    }
 }

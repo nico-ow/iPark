@@ -43,7 +43,6 @@ public class signupDashboard extends javax.swing.JFrame {
         sign = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         to_login = new javax.swing.JButton();
-        gender = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         lname = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -54,47 +53,51 @@ public class signupDashboard extends javax.swing.JFrame {
         pass = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
         confirm = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        gender = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 128, 128));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 450));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 450));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 128, 128));
         jLabel1.setText("CREATE ACCOUNT");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 160, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 160, -1));
 
         firstname.setText(" ");
-        jPanel3.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 234, 30));
+        jPanel3.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 200, 30));
 
         jLabel2.setText("Firstname");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
 
         jLabel3.setText("Email");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
-        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 234, 30));
+        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 200, 30));
 
         jLabel4.setText("Phone No.");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 20));
-        jPanel3.add(phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 234, 30));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, 20));
+        jPanel3.add(phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 200, 30));
 
         jLabel5.setText("Gender");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         jLabel7.setText("Type");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         sign.setBackground(new java.awt.Color(0, 128, 128));
         sign.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,7 +118,7 @@ public class signupDashboard extends javax.swing.JFrame {
         jLabel6.setText("Sign Up");
         sign.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 50, 30));
 
-        jPanel3.add(sign, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 80, -1));
+        jPanel3.add(sign, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 80, -1));
 
         to_login.setBackground(new java.awt.Color(0, 128, 128));
         to_login.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -127,107 +130,120 @@ public class signupDashboard extends javax.swing.JFrame {
                 to_loginActionPerformed(evt);
             }
         });
-        jPanel3.add(to_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 120, -1));
-
-        gender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderActionPerformed(evt);
-            }
-        });
-        jPanel3.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 234, 30));
+        jPanel3.add(to_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 120, -1));
 
         jLabel8.setText("Lastname");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
 
         lname.setText(" ");
-        jPanel3.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 234, 30));
+        jPanel3.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 200, 30));
 
         jLabel9.setText("Address");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
         address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressActionPerformed(evt);
             }
         });
-        jPanel3.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 234, 30));
+        jPanel3.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 200, 30));
 
         jLabel10.setText("Username");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, 20));
-        jPanel3.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 234, 30));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, 20));
+        jPanel3.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 200, 30));
 
         jLabel11.setText("Password");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, -1, -1));
 
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
             }
         });
-        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 234, 30));
+        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 200, 30));
 
         jLabel12.setText("Confirm Password");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
 
         confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmActionPerformed(evt);
             }
         });
-        jPanel3.add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 234, 30));
+        jPanel3.add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 200, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                genderActionPerformed(evt);
             }
         });
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 234, 30));
+        jPanel3.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 200, 30));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 580, 450));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 200, 30));
+
+        jPanel6.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 20, 20));
+
+        jPanel11.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, 20, 20));
+
+        jPanel10.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 20, 20));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 570, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void to_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_to_loginActionPerformed
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_to_loginActionPerformed
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_genderActionPerformed
 
-    private void signMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseClicked
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_signMouseClicked
-
-    private void signMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseEntered
-        sign.setBackground(lightGray);
-    }//GEN-LAST:event_signMouseEntered
-
-    private void signMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseExited
-       sign.setBackground(teal);
-    }//GEN-LAST:event_signMouseExited
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addressActionPerformed
+    }//GEN-LAST:event_confirmActionPerformed
 
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
-    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_confirmActionPerformed
+    }//GEN-LAST:event_addressActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void to_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_to_loginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_to_loginActionPerformed
+
+    private void signMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseExited
+        sign.setBackground(teal);
+    }//GEN-LAST:event_signMouseExited
+
+    private void signMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseEntered
+        sign.setBackground(lightGray);
+    }//GEN-LAST:event_signMouseEntered
+
+    private void signMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseClicked
+        
+    }//GEN-LAST:event_signMouseClicked
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,8 +285,8 @@ public class signupDashboard extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirm;
     private javax.swing.JTextField email;
     private javax.swing.JTextField firstname;
-    private javax.swing.JPasswordField gender;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> gender;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -284,7 +300,10 @@ public class signupDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField lname;
     private javax.swing.JPasswordField pass;
     private javax.swing.JTextField phone;

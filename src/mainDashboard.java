@@ -37,14 +37,17 @@ public class mainDashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         dashboard = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        users = new javax.swing.JPanel();
+        customer = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         admin = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         account = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         main = new javax.swing.JDesktopPane();
-        jDesktopPane2 = new javax.swing.JDesktopPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        settings = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,26 +94,26 @@ public class mainDashboard extends javax.swing.JFrame {
 
         jPanel1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 40));
 
-        users.setBackground(new java.awt.Color(0, 128, 128));
-        users.addMouseListener(new java.awt.event.MouseAdapter() {
+        customer.setBackground(new java.awt.Color(0, 128, 128));
+        customer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usersMouseClicked(evt);
+                customerMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                usersMouseEntered(evt);
+                customerMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                usersMouseExited(evt);
+                customerMouseExited(evt);
             }
         });
-        users.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        customer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("CUSTOMER");
-        users.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 12, -1, -1));
+        customer.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 12, -1, -1));
 
-        jPanel1.add(users, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, 40));
+        jPanel1.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, 40));
 
         admin.setBackground(new java.awt.Color(0, 128, 128));
         admin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,27 +162,50 @@ public class mainDashboard extends javax.swing.JFrame {
         main.setBackground(new java.awt.Color(240, 240, 240));
         main.setForeground(new java.awt.Color(240, 240, 240));
 
-        jDesktopPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        main.setLayer(jDesktopPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        main.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainLayout.createSequentialGroup()
-                .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 630, Short.MAX_VALUE))
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(360, Short.MAX_VALUE))
         );
 
-        getContentPane().add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 630, 410));
+        getContentPane().add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 630, 360));
+
+        jPanel3.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        settings.setBackground(new java.awt.Color(173, 216, 230));
+        settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingsMouseExited(evt);
+            }
+        });
+        settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/internalPages/icons8-settings-30.png"))); // NOI18N
+        settings.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 4, -1, 40));
+
+        jPanel3.add(settings, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 50, 50));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 630, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,13 +218,13 @@ public class mainDashboard extends javax.swing.JFrame {
        dashboard.setBackground(teal);
     }//GEN-LAST:event_dashboardMouseExited
 
-    private void usersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usersMouseEntered
-         users.setBackground(lightGray);
-    }//GEN-LAST:event_usersMouseEntered
+    private void customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerMouseEntered
+         customer.setBackground(lightGray);
+    }//GEN-LAST:event_customerMouseEntered
 
-    private void usersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usersMouseExited
-        users.setBackground(teal);
-    }//GEN-LAST:event_usersMouseExited
+    private void customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerMouseExited
+        customer.setBackground(teal);
+    }//GEN-LAST:event_customerMouseExited
 
     private void adminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseEntered
            admin.setBackground(lightGray);// TODO add your handling code here:
@@ -224,10 +250,9 @@ public class mainDashboard extends javax.swing.JFrame {
         account.setBackground(teal);
     }//GEN-LAST:event_accountMouseExited
 
-    private void usersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usersMouseClicked
-       user up = new user();
-       main.add(up).setVisible(true);
-    }//GEN-LAST:event_usersMouseClicked
+    private void customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerMouseClicked
+       
+    }//GEN-LAST:event_customerMouseClicked
 
     private void dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardMouseClicked
         dashboard up = new dashboard();
@@ -243,6 +268,19 @@ public class mainDashboard extends javax.swing.JFrame {
        account up = new account();
         main.add(up).setVisible(true);
     }//GEN-LAST:event_accountMouseClicked
+
+    private void settingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseClicked
+       user up = new user();
+       main.add(up).setVisible(true);
+    }//GEN-LAST:event_settingsMouseClicked
+
+    private void settingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseEntered
+        settings.setBackground(lightGray);
+    }//GEN-LAST:event_settingsMouseEntered
+
+    private void settingsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseExited
+         settings.setBackground(lightBlue);
+    }//GEN-LAST:event_settingsMouseExited
 
     /**
      * @param args the command line arguments
@@ -282,16 +320,19 @@ public class mainDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel account;
     private javax.swing.JPanel admin;
+    private javax.swing.JPanel customer;
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel info;
-    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JDesktopPane main;
-    private javax.swing.JPanel users;
+    private javax.swing.JPanel settings;
     // End of variables declaration//GEN-END:variables
 }
