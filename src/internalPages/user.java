@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import panel.loginDashboard;
 
 /**
  *
@@ -228,6 +229,9 @@ public class user extends javax.swing.JInternalFrame {
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         mainFrame.dispose();
+        loginDashboard lg = new loginDashboard();
+        lg.setVisible(true);
+        
        
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutMouseClicked
