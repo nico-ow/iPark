@@ -9,7 +9,8 @@ import config.connectDB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import net.proteanit.sql.DbUtils;
-
+import panel.loginDashboard;
+import panel.signupDashboard;
 /**
  *
  * @author mendo
@@ -30,6 +31,7 @@ public class adminDB extends javax.swing.JFrame {
             connectDB dbc = new connectDB();
             ResultSet rs = dbc.getData("SELECT * FROM tbl_user");           
             overview.setModel(DbUtils.resultSetToTableModel(rs));
+            
             
             
         }catch(SQLException ex){
@@ -54,7 +56,7 @@ public class adminDB extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        overview = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -75,6 +77,11 @@ public class adminDB extends javax.swing.JFrame {
         jLabel2.setText("iPark");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 30, -1, -1));
 
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -100,9 +107,9 @@ public class adminDB extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        overview.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 580, 220));
+        jPanel1.add(overview, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 580, 220));
 
         jPanel4.setBackground(new java.awt.Color(173, 216, 230));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,6 +152,13 @@ public class adminDB extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+      loginDashboard log = new loginDashboard();
+
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jPanel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,7 +208,7 @@ public class adminDB extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane overview;
     // End of variables declaration//GEN-END:variables
 }
