@@ -90,7 +90,6 @@ public class signupDashboard extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         sign = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        requiredfname9 = new javax.swing.JLabel();
         requiredfname = new javax.swing.JLabel();
         requiredlname = new javax.swing.JLabel();
         requiredemail = new javax.swing.JLabel();
@@ -279,13 +278,12 @@ public class signupDashboard extends javax.swing.JFrame {
         sign.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 50, 30));
 
         jPanel3.add(sign, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 80, -1));
-        jPanel3.add(requiredfname9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 200, 10));
-        jPanel3.add(requiredfname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 200, 10));
-        jPanel3.add(requiredlname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 200, 10));
-        jPanel3.add(requiredemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 200, 10));
-        jPanel3.add(requiredcnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 200, 10));
+        jPanel3.add(requiredfname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 200, 10));
+        jPanel3.add(requiredlname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 200, 10));
+        jPanel3.add(requiredemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 200, 10));
+        jPanel3.add(requiredcnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 200, 10));
         jPanel3.add(requireduname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 200, 10));
-        jPanel3.add(requiredpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 200, 10));
+        jPanel3.add(requiredpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 200, 10));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 570, 450));
 
@@ -544,7 +542,7 @@ password.repaint();
     this.dispose();
 
     } else {
-JOptionPane.showMessageDialog(this, "Registration Failed!", "Failed", JOptionPane.INFORMATION_MESSAGE);
+    JOptionPane.showMessageDialog(this, "Registration Failed!", "Failed", JOptionPane.INFORMATION_MESSAGE);
     
 
 }
@@ -635,7 +633,6 @@ JOptionPane.showMessageDialog(this, "Registration Failed!", "Failed", JOptionPan
     private javax.swing.JLabel requiredcnumber;
     private javax.swing.JLabel requiredemail;
     private javax.swing.JLabel requiredfname;
-    private javax.swing.JLabel requiredfname9;
     private javax.swing.JLabel requiredlname;
     private javax.swing.JLabel requiredpassword;
     private javax.swing.JLabel requireduname;
