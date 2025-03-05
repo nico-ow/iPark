@@ -63,6 +63,11 @@ public class signupDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Success = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        RegisterError = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -96,6 +101,20 @@ public class signupDashboard extends javax.swing.JFrame {
         requiredcnumber = new javax.swing.JLabel();
         requireduname = new javax.swing.JLabel();
         requiredpassword = new javax.swing.JLabel();
+
+        Success.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setText("Success!");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        Success.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 140));
+
+        RegisterError.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Error");
+        RegisterError.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 0));
@@ -341,6 +360,7 @@ if (user.isEmpty()) {
     firstname.setForeground(Color.RED);
     requiredfname.setText("First Name is required");
     requiredfname.setForeground(Color.RED);
+    
 } else {
     firstname.setForeground(Color.BLACK);
     requiredfname.setText("");
@@ -382,6 +402,7 @@ if (user.isEmpty()) {
     firstname.setForeground(Color.RED);
     requiredfname.setText("First Name is required");
     requiredfname.setForeground(Color.RED);
+    valid = false;
 } else {
     firstname.setForeground(Color.BLACK);
     requiredfname.setText("");
@@ -398,6 +419,7 @@ if (last.isEmpty()) {
     lastname.setForeground(Color.RED);
     requiredlname.setText("Last Name is required");
     requiredlname.setForeground(Color.RED);
+    valid = false;
 } else {
     lastname.setForeground(Color.BLACK);
     requiredlname.setText("");
@@ -414,14 +436,17 @@ if (email1.isEmpty()) {
     email.setForeground(Color.RED);
     requiredemail.setText("Email is required");
     requiredemail.setForeground(Color.RED);
+    valid = false;
 } else if (!email1.matches(emailRegex)) {
     email.setForeground(Color.RED);
     requiredemail.setText("Email is invalid");
     requiredemail.setForeground(Color.RED);
+    valid = false;
 } else if (emailExists(email1)) {
     email.setForeground(Color.RED);
     requiredemail.setText("Email already exists");
     requiredemail.setForeground(Color.RED);
+    valid = false;
 } else {
     email.setForeground(Color.BLACK);
     requiredemail.setText("");
@@ -437,10 +462,12 @@ if (con.isEmpty()) {
     contactnumber.setForeground(Color.RED);
     requiredcnumber.setText("Contact Number is required");
     requiredcnumber.setForeground(Color.RED);
+    valid = false;
 } else if (!con.matches("\\d{11}")) { 
     contactnumber.setForeground(Color.RED);
     requiredcnumber.setText("Contact Number must be exactly 11 digits");
     requiredcnumber.setForeground(Color.RED);
+    valid = false;
 } else {
     contactnumber.setForeground(Color.BLACK);
     requiredcnumber.setText("");
@@ -459,11 +486,13 @@ String password1 = password.getText();
             password.setForeground(Color.RED);
             requiredpassword.setText("Password is required");
             requiredpassword.setForeground(Color.RED);
+            valid = false;
         } else if (password1.length() < 8) {
 
             password.setForeground(Color.RED);
             requiredpassword.setText("Password too short. Must be 8 characters or more");
             requiredpassword.setForeground(Color.RED);
+            valid = false;
         } else {
             password.setForeground(Color.BLACK);
             requiredpassword.setText("Password good");
@@ -480,6 +509,7 @@ if (uname.isEmpty()) {
     username.setForeground(Color.RED);
     requireduname.setText("Username is required");
     requireduname.setForeground(Color.RED);
+    valid = false;
 } else {
     username.setForeground(Color.BLACK);
     requireduname.setText("");
@@ -504,6 +534,7 @@ if (password1.isEmpty()) {
     password.setForeground(Color.RED);
     requiredpassword.setText("Password is required");
     requiredpassword.setForeground(Color.RED);
+    
 } else if (password1.length() < 8) {
     password.setForeground(Color.RED);
     requiredpassword.setText("Password too short. Must be 8 characters or more");
@@ -525,9 +556,10 @@ password.repaint();
     }//GEN-LAST:event_contactnumberFocusLost
 
     private void signMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseClicked
-    
+     Success.pack();
+     RegisterError.pack();
 
-    if (signUpValidation()) {
+if (signUpValidation()) {
 
     connectDB con = new connectDB();
 
@@ -541,12 +573,12 @@ password.repaint();
     lg.setVisible(true);
     this.dispose();
 
-    } else {
-    JOptionPane.showMessageDialog(this, "Registration Failed!", "Failed", JOptionPane.INFORMATION_MESSAGE);
-    
+} else {
+
+    RegisterError.setVisible(true);
+    RegisterError.setLocationRelativeTo(null);
 
 }
-
 
 
     }//GEN-LAST:event_signMouseClicked
@@ -607,6 +639,8 @@ password.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog RegisterError;
+    private javax.swing.JDialog Success;
     private javax.swing.JPasswordField confirm;
     private javax.swing.JTextField contactnumber;
     private javax.swing.JTextField email;
@@ -617,7 +651,9 @@ password.repaint();
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -626,6 +662,7 @@ password.repaint();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField lastname;
