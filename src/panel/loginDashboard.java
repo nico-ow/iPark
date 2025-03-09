@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import user.userPanel;
 /**
  *
  * @author mendo
@@ -219,7 +220,7 @@ try (Connection conn = DriverManager.getConnection(url, user, password1);
 
             // Redirect based on user type
             if ("User".equalsIgnoreCase(userType)) {
-                mainDashboard csdb = new mainDashboard();
+                userPanel csdb = new userPanel();
                 this.dispose();
                 csdb.setVisible(true);
             } else if ("Admin".equalsIgnoreCase(userType)) {

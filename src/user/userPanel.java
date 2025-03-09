@@ -3,31 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package internalPages;
-import java.awt.Color;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
-import panel.loginDashboard;
+package user;
 
+import java.awt.Color;
+import panel.loginDashboard;
 /**
  *
  * @author mendo
  */
-public class user extends javax.swing.JInternalFrame {
+public class userPanel extends javax.swing.JFrame {
 
     /**
-     * Creates new form user
+     * Creates new form userPanel
      */
-    public user() {
+    public userPanel() {
         initComponents();
-        
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
-        bi.setNorthPane(null);
     }
-     Color gray = new Color(204,204,204);
-     Color white = new Color(240,240,240);
+    Color lightGray = new Color(211, 211, 211);
+    Color lightBlue = new Color(173, 216, 230);
+    Color charcoal = new Color(28, 28, 28);
+    Color teal = new Color(0, 128, 128);
+    Color white = new Color(240,240,240);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +33,6 @@ public class user extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -64,11 +59,7 @@ public class user extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText("CUSTOMER PANEL");
-
-        setPreferredSize(new java.awt.Dimension(646, 410));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setForeground(new java.awt.Color(240, 240, 240));
@@ -79,14 +70,11 @@ public class user extends javax.swing.JInternalFrame {
         jLabel2.setText("ACCOUNT SETTINGS");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setText("USERNAME");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 135, -1, 10));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/internalPages/icons8-view-as-different-user-100.png"))); // NOI18N
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 40, -1, 90));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 170, 180));
@@ -131,7 +119,7 @@ public class user extends javax.swing.JInternalFrame {
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 10, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 180));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 180));
 
         jPanel2.setBackground(new java.awt.Color(173, 216, 230));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -157,7 +145,7 @@ public class user extends javax.swing.JInternalFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-logout-50.png"))); // NOI18N
         logout.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
-        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 16, 140, 150));
+        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 43, 140, 150));
 
         edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -176,7 +164,7 @@ public class user extends javax.swing.JInternalFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-user-settings-64.png"))); // NOI18N
         edit.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 34, 70, 70));
 
-        jPanel2.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 16, 140, 150));
+        jPanel2.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 43, 140, 150));
 
         report.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -191,55 +179,85 @@ public class user extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("REPORTS");
         report.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 110, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/internalPages/icons8-reports-50.png"))); // NOI18N
         report.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 50, -1, -1));
 
-        jPanel2.add(report, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 16, 140, 150));
+        jPanel2.add(report, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 43, 140, 150));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 640, 230));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
-        edit.setBackground(gray);
-    }//GEN-LAST:event_editMouseEntered
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
 
-    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
-         edit.setBackground(white);// TODO add your handling code here:
-    }//GEN-LAST:event_editMouseExited
+         loginDashboard log = new loginDashboard();
 
-    private void reportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseEntered
-         report.setBackground(gray);// TODO add your handling code here:
-    }//GEN-LAST:event_reportMouseEntered
-
-    private void reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseExited
-        report.setBackground(white); // TODO add your handling code here:
-    }//GEN-LAST:event_reportMouseExited
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutMouseClicked
 
     private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
-         logout.setBackground(gray);// TODO add your handling code here:
+    logout.setBackground(lightGray);        
     }//GEN-LAST:event_logoutMouseEntered
 
     private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
-         logout.setBackground(white);// TODO add your handling code here:
+    logout.setBackground(white);        
     }//GEN-LAST:event_logoutMouseExited
 
-    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        mainFrame.dispose();
-        loginDashboard lg = new loginDashboard();
-        lg.setVisible(true);
-        
-       
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logoutMouseClicked
+    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
+    edit.setBackground(lightGray);   
+    }//GEN-LAST:event_editMouseEntered
 
+    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
+    edit.setBackground(white);  
+    }//GEN-LAST:event_editMouseExited
+
+    private void reportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseEntered
+    report.setBackground(lightGray);   
+    }//GEN-LAST:event_reportMouseEntered
+
+    private void reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseExited
+    report.setBackground(white);   
+    }//GEN-LAST:event_reportMouseExited
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(userPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(userPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(userPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(userPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new userPanel().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel edit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

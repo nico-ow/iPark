@@ -63,11 +63,11 @@ public class signupDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Success = new javax.swing.JDialog();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
         RegisterError = new javax.swing.JDialog();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -102,25 +102,37 @@ public class signupDashboard extends javax.swing.JFrame {
         requireduname = new javax.swing.JLabel();
         requiredpassword = new javax.swing.JLabel();
 
-        Success.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setText("Success!");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
-
-        Success.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 140));
-
         RegisterError.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Error");
-        RegisterError.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+        jPanel5.setBackground(new java.awt.Color(173, 216, 230));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setText("Registration Error!");
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+
+        jPanel7.setBackground(new java.awt.Color(0, 128, 128));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel16.setText("Retry");
+        jPanel7.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 2, -1, -1));
+
+        jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 152, 50, 20));
+
+        RegisterError.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 180));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 128, 128));
+        jPanel1.setBackground(new java.awt.Color(173, 216, 230));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 450));
 
@@ -297,7 +309,19 @@ public class signupDashboard extends javax.swing.JFrame {
         sign.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 50, 30));
 
         jPanel3.add(sign, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 80, -1));
+
+        requiredfname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                requiredfnameFocusLost(evt);
+            }
+        });
         jPanel3.add(requiredfname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 200, 10));
+
+        requiredlname.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                requiredlnameFocusLost(evt);
+            }
+        });
         jPanel3.add(requiredlname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 200, 10));
         jPanel3.add(requiredemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 200, 10));
         jPanel3.add(requiredcnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 200, 10));
@@ -350,43 +374,11 @@ loginDashboard log = new loginDashboard();
     }//GEN-LAST:event_exitMouseClicked
 
     private void firstnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusLost
-     Font smallFont = new Font("Arial", Font.PLAIN, 10);
-firstname.setFont(smallFont); 
-requiredfname.setFont(smallFont); 
-
-String user = firstname.getText();
-
-if (user.isEmpty()) {
-    firstname.setForeground(Color.RED);
-    requiredfname.setText("First Name is required");
-    requiredfname.setForeground(Color.RED);
-    
-} else {
-    firstname.setForeground(Color.BLACK);
-    requiredfname.setText("");
-}
-
-firstname.repaint();
-                                      
+          
     }//GEN-LAST:event_firstnameFocusLost
 
     private void lastnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameFocusLost
- Font smallFont = new Font("Arial", Font.PLAIN, 10);
-lastname.setFont(smallFont); 
-requiredlname.setFont(smallFont); 
-
-String user = lastname.getText();
-
-if (user.isEmpty()) {
-    lastname.setForeground(Color.RED);
-    requiredlname.setText("Last Name is required");
-    requiredlname.setForeground(Color.RED);
-} else {
-    lastname.setForeground(Color.BLACK);
-    requiredlname.setText("");
-}
-
-lastname.repaint();
+ 
     }//GEN-LAST:event_lastnameFocusLost
 
     private void contactnumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactnumberMouseClicked
@@ -556,7 +548,7 @@ password.repaint();
     }//GEN-LAST:event_contactnumberFocusLost
 
     private void signMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signMouseClicked
-     Success.pack();
+
      RegisterError.pack();
 
 if (signUpValidation()) {
@@ -602,6 +594,53 @@ if (signUpValidation()) {
     private void lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lastnameActionPerformed
+
+    private void requiredfnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_requiredfnameFocusLost
+       Font smallFont = new Font("Arial", Font.PLAIN, 10);
+firstname.setFont(smallFont); 
+requiredfname.setFont(smallFont); 
+
+String user = firstname.getText();
+
+if (user.isEmpty()) {
+    firstname.setForeground(Color.RED);
+    requiredfname.setText("First Name is required");
+    requiredfname.setForeground(Color.RED);
+    
+} else {
+    firstname.setForeground(Color.BLACK);
+    requiredfname.setText("");
+}
+
+firstname.repaint();
+                                
+    }//GEN-LAST:event_requiredfnameFocusLost
+
+    private void requiredlnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_requiredlnameFocusLost
+        Font smallFont = new Font("Arial", Font.PLAIN, 10);
+lastname.setFont(smallFont); 
+requiredlname.setFont(smallFont); 
+  
+String user = lastname.getText();
+
+if (user.isEmpty()) {
+    lastname.setForeground(Color.RED);
+    requiredlname.setText("Last Name is required");
+    requiredlname.setForeground(Color.RED);
+} else {
+    lastname.setForeground(Color.BLACK);
+    requiredlname.setText("");
+}
+
+lastname.repaint();
+    }//GEN-LAST:event_requiredlnameFocusLost
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+       signupDashboard log = new signupDashboard();
+
+        log.setVisible(true);
+        this.dispose();  
+    }//GEN-LAST:event_jPanel7MouseClicked
   
     /**
      * @param args the command line arguments
@@ -640,7 +679,6 @@ if (signUpValidation()) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog RegisterError;
-    private javax.swing.JDialog Success;
     private javax.swing.JPasswordField confirm;
     private javax.swing.JTextField contactnumber;
     private javax.swing.JTextField email;
@@ -651,9 +689,9 @@ if (signUpValidation()) {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -662,9 +700,10 @@ if (signUpValidation()) {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField lastname;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel requiredcnumber;
