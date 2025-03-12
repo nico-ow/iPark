@@ -35,6 +35,10 @@ public class loginDashboard extends javax.swing.JFrame {
     Color lightBlue = new Color(173, 216, 230);
     Color charcoal = new Color(28, 28, 28);
     Color teal = new Color(0, 128, 128);
+    Color orange = new Color(255,153,0);
+    Color purple = new Color(102,102,255);
+    Color skyblue = new Color(102,255,255);
+    Color pink= new Color(255,153,204);
 
         
 
@@ -59,11 +63,11 @@ public class loginDashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         login = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        no_1 = new javax.swing.JPanel();
+        no_2 = new javax.swing.JPanel();
+        no_4 = new javax.swing.JPanel();
+        no_5 = new javax.swing.JPanel();
+        no_3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -159,25 +163,68 @@ public class loginDashboard extends javax.swing.JFrame {
 
         right.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 80, 30));
 
-        jPanel1.setBackground(new java.awt.Color(173, 216, 230));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        right.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 20, 20));
+        no_1.setBackground(new java.awt.Color(173, 216, 230));
+        no_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                no_1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                no_1MouseExited(evt);
+            }
+        });
+        no_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(no_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 20, 20));
 
-        jPanel2.setBackground(new java.awt.Color(173, 216, 230));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        right.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 20, 20));
+        no_2.setBackground(new java.awt.Color(173, 216, 230));
+        no_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                no_2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                no_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                no_2MouseExited(evt);
+            }
+        });
+        no_2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(no_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 20, 20));
 
-        jPanel3.setBackground(new java.awt.Color(173, 216, 230));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        right.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 20, 20));
+        no_4.setBackground(new java.awt.Color(173, 216, 230));
+        no_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                no_4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                no_4MouseExited(evt);
+            }
+        });
+        no_4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(no_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 20, 20));
 
-        jPanel4.setBackground(new java.awt.Color(173, 216, 230));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        right.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 20, 20));
+        no_5.setBackground(new java.awt.Color(173, 216, 230));
+        no_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                no_5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                no_5MouseExited(evt);
+            }
+        });
+        no_5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(no_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 20, 20));
 
-        jPanel5.setBackground(new java.awt.Color(173, 216, 230));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        right.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 20, 20));
+        no_3.setBackground(new java.awt.Color(173, 216, 230));
+        no_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                no_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                no_3MouseExited(evt);
+            }
+        });
+        no_3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        right.add(no_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 20, 20));
 
         getContentPane().add(right, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 370, 420));
 
@@ -263,6 +310,50 @@ try (Connection conn = DriverManager.getConnection(url, user, password1);
      
     }//GEN-LAST:event_passwordFocusLost
 
+    private void no_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_1MouseEntered
+          no_1.setBackground(orange);
+    }//GEN-LAST:event_no_1MouseEntered
+
+    private void no_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_1MouseExited
+          no_1.setBackground(lightBlue);
+    }//GEN-LAST:event_no_1MouseExited
+
+    private void no_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_no_2MouseClicked
+
+    private void no_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_2MouseEntered
+       no_2.setBackground(teal);
+    }//GEN-LAST:event_no_2MouseEntered
+
+    private void no_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_2MouseExited
+         no_2.setBackground(lightBlue);
+    }//GEN-LAST:event_no_2MouseExited
+
+    private void no_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_3MouseEntered
+      no_3.setBackground(pink);
+    }//GEN-LAST:event_no_3MouseEntered
+
+    private void no_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_3MouseExited
+      no_3.setBackground(lightBlue);
+    }//GEN-LAST:event_no_3MouseExited
+
+    private void no_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_4MouseEntered
+        no_4.setBackground(skyblue);
+    }//GEN-LAST:event_no_4MouseEntered
+
+    private void no_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_4MouseExited
+         no_4.setBackground(lightBlue);
+    }//GEN-LAST:event_no_4MouseExited
+
+    private void no_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_5MouseEntered
+       no_5.setBackground(purple);
+    }//GEN-LAST:event_no_5MouseEntered
+
+    private void no_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_no_5MouseExited
+         no_5.setBackground(lightBlue);
+    }//GEN-LAST:event_no_5MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -305,13 +396,13 @@ try (Connection conn = DriverManager.getConnection(url, user, password1);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel left;
     private javax.swing.JPanel login;
+    private javax.swing.JPanel no_1;
+    private javax.swing.JPanel no_2;
+    private javax.swing.JPanel no_3;
+    private javax.swing.JPanel no_4;
+    private javax.swing.JPanel no_5;
     private javax.swing.JPasswordField password;
     private javax.swing.JPanel right;
     private javax.swing.JButton signup;
